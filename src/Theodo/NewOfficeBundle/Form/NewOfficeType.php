@@ -17,4 +17,11 @@ class NewOfficeType extends AbstractType
     {
         return 'new_office';
     }
+
+    public function getDefaultOptions()
+    {
+        return array(
+            'csrf_protection' => false,
+        );
+    }
 }
