@@ -9,7 +9,9 @@ class TromItinerary {
     // 48.851744%2C2.346832
     // 48.882724%2C2.322462
 
-    $trom_data = file_get_contents('http://trom.fr/route/?start='.implode('%2C', $origin).'&destination='.implode('%2C', $destination));
+    $url = 'http://trom.fr/route/?start='.implode('%2C', $origin).'&destination='.implode('%2C', $destination);
+    $trom_data = file_get_contents($url);
+
     $trom_json = json_decode($trom_data);
 
     $times = array();
